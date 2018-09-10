@@ -1,0 +1,54 @@
+
+
+<div *ngIf="currentMusic" style="margin-top: 20px;">
+
+  <div class="card ">
+    <div class="card-header">
+      <!--<video controls=""  name="media"><source src="{{selectedMusic.previewUrl}}" type="audio/x-m4a"></video>-->
+      <img src="{{currentMusic.artworkUrl100 }}" class="rounded mx-auto d-block" alt="" width="200px" height="200px" style="margin-bottom: 10px;">
+    </div>
+    <div class="card-body">
+      <table class="table table-borderless">
+
+        <tbody>
+        <tr>
+          <th >Track Id:</th>
+          <td>{{currentMusic.trackId }}</td>
+        </tr>
+
+        <tr>
+          <th >Track Name:</th>
+          <td>{{currentMusic.trackName }}</td>
+        </tr>
+        <tr>
+          <th >Artist Name :</th>
+          <td>{{currentMusic.artistName}}</td>
+        </tr>
+        <tr>
+          <th >Collection Name :</th>
+          <td>{{currentMusic.collectionName}}</td>
+        </tr>
+
+
+        <tr>
+          <th >Release Date :</th>
+          <td>{{currentMusic.releaseDate}}</td>
+        </tr>
+        <tr>
+          <th >Preview :</th>
+          <td><audio controls=""  name="media" src="{{currentMusic.previewUrl}}" type="audio/x-m4a"></audio></td>
+        </tr>
+
+        <tr>
+          <th >Price: </th>
+          <td>${{currentMusic.trackPrice}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <button type="button" class="btn btn-primary" (click)="addToCart(currentMusic)" >Add to Cart</button>
+      <button type="button" class="btn btn-primary" (click)="back()" style="margin-left: 10px;">back</button>
+    </div>
+  </div>
+</div>
+

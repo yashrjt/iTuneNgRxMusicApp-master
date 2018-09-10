@@ -1,0 +1,27 @@
+<div class="container" style="margin-top: 20px">
+
+<div class='row'>
+  <div class='col-md-12  ' >
+    <app-search (search)="searchMusic($event)" ></app-search>
+  </div>
+
+  <div class='col-md-6'>
+    <app-music-list
+      [music]="music$ | async"
+      [selectedMusic]="selectedMusic$ | async"
+      [errorMessage]="errorMessage$ | async"
+      (selected)="musicSelected($event)"
+      (setPage)="setPNo($event)"
+      [page]="num$ | async"
+    ></app-music-list>
+  </div>
+  <div class='col-md-6'>
+    <app-music-detail
+      [selectedMusic]="selectedMusic$ | async"
+      [errorMessage]="errorMessage$ | async"
+      (fav)="addFavorite($event)"
+      ></app-music-detail>
+  </div>
+</div>
+</div>
+

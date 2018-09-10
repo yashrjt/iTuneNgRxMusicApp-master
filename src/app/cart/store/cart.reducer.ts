@@ -21,13 +21,12 @@ function updateMusicItem(state: ShoppingCart, payload: MusicItem) {
   let targetItem = state['musicItem'].find(item => item.trackId === payload.trackId);
 
   if (targetItem) { // If musicObject already Exist
-   targetItem.count++;
-   targetItem.sum = payload.trackPrice*targetItem.count;
-   /*payload.count++;
-   payload.sum+=payload.trackPrice*payload.count;*/
-    console.log( payload.sum);
-  }
-  else {
+    targetItem.count++;
+    targetItem.sum = payload.trackPrice * targetItem.count;
+    /*payload.count++;
+    payload.sum+=payload.trackPrice*payload.count;*/
+    console.log(payload.sum);
+  } else {
     // @ts-ignore
     state.musicItem.push(payload);
     payload.count = 1;

@@ -36,7 +36,7 @@ function updateMusicItem(state: ShoppingCart, payload: MusicItem) {
 }
 
 
-export function cartReducer(state= initialState, action: CartActions): ShoppingCart{
+export function cartReducer(state= initialState, action: CartActions): ShoppingCart {
   switch (action.type) {
     case CartActionTypes.AddToCart:
         updateMusicItem(state, action.payload);
@@ -58,7 +58,7 @@ export function cartReducer(state= initialState, action: CartActions): ShoppingC
 }
 
 
-export function addToCart(state: ShoppingCart ,payload:MusicItem){
+export function addToCart(state: ShoppingCart , payload: MusicItem){
   return{
     ...state,
     totalCount: state.totalCount+1,

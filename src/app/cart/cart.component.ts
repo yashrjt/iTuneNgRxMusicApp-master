@@ -54,17 +54,15 @@ export class CartComponent implements OnInit, OnDestroy {
   //   console.log('price:', this.price);
   // }
   addQty(item) {
-    if (confirm('add ' + item.trackName + ' to cart?')) {
+
       this.store.dispatch(new CartActions.AddToCart(item));
-    }
     this.store.pipe(select(fromCart.getSum),
       takeWhile(() => this.componentActive))
       .subscribe(x => this.price = x);
   }
-removeQty(item){
-  if ( confirm('Remove ' + item.trackName + ' from cart?')) {
+removeQty(item) {
+
     this.store.dispatch(new CartActions.DeleteItem(item));
-  }
   this.store.pipe(select(fromCart.getSum),
     takeWhile(() => this.componentActive))
     .subscribe(x => this.price = x);

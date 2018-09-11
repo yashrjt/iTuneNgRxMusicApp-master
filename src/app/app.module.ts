@@ -9,6 +9,7 @@ import { SearchComponent } from './music/component/search/search.component';
 import { MusicShellComponent } from './music/container/music-shell/music-shell.component';
 import { MyFavComponent } from './music/container/my-fav/my-fav.component';
 import { MusicSearchComponent } from './music/services/music-search/music-search.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {StoreModule} from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -68,6 +69,7 @@ const routes = [
     FormsModule,
     MusicModule,
     CartModule,
+    NgbModule.forRoot(),
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     StoreModule.forRoot({}),

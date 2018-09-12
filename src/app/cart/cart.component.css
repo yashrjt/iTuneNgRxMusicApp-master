@@ -2,3 +2,21 @@
   background: none;
   color: white;
 }
+
+.itemCount{
+
+  text-align: center;
+}
+
+.flex{
+  display: flex;
+
+}
+
+.cartMessage{
+  margin-top: 20px;
+  text-align: center;
+  color: aquamarine;
+  font-family: "Rage Italic";
+  font-size:xx-large;
+}

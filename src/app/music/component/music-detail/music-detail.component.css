@@ -9,3 +9,13 @@
   float:left;
   margin-right:5px;
 }
+
+
+#flex-container{
+  display: flex;
+  justify-content:center;
+}
+
+/*.card{
+  /*height: 750px;*/
+/*}*/

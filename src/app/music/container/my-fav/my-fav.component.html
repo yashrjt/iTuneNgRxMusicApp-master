@@ -6,6 +6,7 @@
     <!--<li *ngFor="let fav of favorite">{{fav.trackName}}</li>-->
   <!--</ul>-->
 <!--</div>-->
+<div *ngIf="!!favorite.length; else emptyFav">
 <div class="jumbotron">
 <table class="table">
   <thead class="thead-dark">
@@ -32,3 +33,9 @@
 </tbody>
 </table>
 </div>
+</div>
+<ng-template #emptyFav>
+<div class="cartMessage">
+  No items in Favorite!
+</div>
+</ng-template>

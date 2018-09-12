@@ -15,7 +15,7 @@ import {Observable} from 'rxjs';
 })
 export class AppComponent implements OnInit  {
   title = 'iTunesNgRx';
-  navbarCollapsed = false;
+  navbarCollapsed = true;
  val$: Observable<number> ;
  cartCount$:  Observable<number> ;
   get isLoggedIn(): boolean {

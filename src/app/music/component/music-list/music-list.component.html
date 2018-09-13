@@ -1,5 +1,5 @@
-<div *ngIf="!!total; else searchResults">
-  <div class="card" *ngIf="music"  style="margin-top: 20px;">
+
+  <div class="card" *ngIf="!!total; else searchResults"  style="margin-top: 20px;">
 
     <div *ngIf="music">
       <div class="card-header" >
@@ -21,7 +21,7 @@
     </div>
 
   </div>
-</div>
+
 
 <ng-template #searchResults>
 

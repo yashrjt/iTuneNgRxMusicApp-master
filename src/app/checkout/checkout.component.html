@@ -1,55 +1,58 @@
-<div class="card">
+<div class="row justify-content-center" style="margin-top: 20px">
+<div class="col-md-6">
+<div class="card"  >
+  <!--<div class="card-header"> Checkout form</div>-->
   <div class="card-body">
 <form [formGroup]="customerForm">
   <div class="form-group" [ngClass]= "{'has-error': (customerForm.get('firstName').touched ||
                                               customerForm.get('firstName').dirty) &&
                                               !customerForm.get('firstName').valid }">
-    <label for="firstNameId" >First name</label>
+    <label for="firstNameId" ><strong>First name</strong></label>
     <input type="text" class="form-control" id="firstNameId" formControlName="firstName">
     <span class="help-block" *ngIf="(customerForm.get('firstName').touched || customerForm.get('firstName').dirty) &&
     customerForm.get('firstName').errors ">
-    <span *ngIf="customerForm.get('firstName').errors.required">
-    Please enter your first name
+    <span *ngIf="customerForm.get('firstName').errors.required" style="color: red">
+      <strong>Please enter your first name</strong>
     </span>
-    <span *ngIf="customerForm.get('firstName').errors.minlength">
-      The first name must be longer than 3 characters.
+    <span *ngIf="customerForm.get('firstName').errors.minlength" style="color: red">
+      <strong>The first name must be longer than 3 characters.</strong>
     </span>
     </span>
 
   </div>
   <div class="form-group" [ngClass]="{'has-error': (customerForm.get('lastName').touched || customerForm.get('lastName').dirty) && !customerForm.get('lastName').valid }">
-    <label for="lastNameId">last name</label>
+    <label for="lastNameId"><strong>Last name</strong></label>
     <input type="text" class="form-control" id="lastNameId" formControlName="lastName">
     <span class="help-block" *ngIf="(customerForm.get('lastName').touched || customerForm.get('lastName').dirty) &&
     customerForm.get('lastName').errors ">
-    <span *ngIf="customerForm.get('lastName').errors.required">
-    Please enter your last name
+    <span *ngIf="customerForm.get('lastName').errors.required" style="color: red">
+      <strong>Please enter your last name</strong>
     </span>
-    <span *ngIf="customerForm.get('lastName').errors.minlength">
-      The last name must be longer than 3 characters.
+    <span *ngIf="customerForm.get('lastName').errors.minlength" style="color: red">
+      <strong> The last name must be longer than 3 characters.</strong>
     </span>
     </span>
   </div>
   <div class="form-group" [ngClass]="{'has-error': (customerForm.get('creditCardNo').touched || customerForm.get('creditCardNo').dirty) && !customerForm.get('creditCardNo').valid }">
-    <label for="creditCardNo">credit Card No</label>
+    <label for="creditCardNo"><strong>Credit Card No</strong></label>
     <input type="number" class="form-control" id="creditCardNo" formControlName="creditCardNo">
     <span class="help-block" *ngIf="(customerForm.get('creditCardNo').touched || customerForm.get('creditCardNo').dirty) &&
     customerForm.get('creditCardNo').errors ">
-    <span *ngIf="customerForm.get('creditCardNo').errors.required">
-    Please enter your credit card number
+    <span *ngIf="customerForm.get('creditCardNo').errors.required" style="color: red">
+      <strong>Please enter your credit card number</strong>
     </span>
-    <span *ngIf="customerForm.get('creditCardNo').errors.minlength">
-      Invalid Credit card number
+    <span *ngIf="customerForm.get('creditCardNo').errors.minlength" style="color: red">
+      <strong> Invalid Credit card number</strong>
     </span>
     </span>
   </div>
   <div class="form-group" [ngClass]="{'has-error': (customerForm.get('street').touched || customerForm.get('street').dirty) && !customerForm.get('street').valid }">
-    <label for="street">Street Addr</label>
+    <label for="street"><strong>Street Address</strong></label>
     <input type="text" class="form-control" id="street" formControlName="street">
     <span class="help-block" *ngIf="(customerForm.get('street').touched || customerForm.get('street').dirty) &&
     customerForm.get('street').errors ">
-    <span *ngIf="customerForm.get('street').errors.required">
-    Please enter your street address
+    <span *ngIf="customerForm.get('street').errors.required" style="color: red">
+      <strong>Please enter your street address</strong>
     </span>
 
 
@@ -61,4 +64,6 @@
   <button type="submit" class="btn btn-primary" (click)="makePayment()" [disabled]="!customerForm.valid"  >Make Payment</button>
 </form>
   </div>
+</div>
+</div>
 </div>

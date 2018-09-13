@@ -1,4 +1,5 @@
-
+<div class="row justify-content-center" style="margin-top: 20px">
+  <div class="col-md-6">
 <div class="card" style="margin-top: 20px">
   <div class="card-header">
     Login
@@ -9,9 +10,8 @@
     <div class="form-group" [ngClass]="{'has-error': (userNameVar.touched ||
                                                 userNameVar.dirty) &&
                                                 !userNameVar.valid }">
-      <label class="col-md-2 control-label" for="userNameId">User Name</label>
-
-      <div class="col-md-8">
+      <label class=" control-label" for="userNameId"><strong>User Name</strong></label>
+      <div class="">
         <input class="form-control"
                id="userNameId"
                type="text"
@@ -32,9 +32,9 @@
     <div class="form-group" [ngClass]="{'has-error': (passwordVar.touched ||
                                                 passwordVar.dirty) &&
                                                 !passwordVar.valid }">
-      <label class="col-md-2 control-label" for="passwordId">Password</label>
+      <label class="control-label" for="passwordId"><strong>Password</strong></label>
 
-      <div class="col-md-8">
+      <div class="">
         <input class="form-control"
                id="passwordId"
                type="password"
@@ -53,7 +53,7 @@
     </div>
 
     <div class="form-group">
-      <div class="col-md-4 col-md-offset-2">
+      <div class=" col-md-offset-2">
                                 <span>
                                 <button class="btn btn-primary"
                                         type="submit"
@@ -69,4 +69,5 @@
 </form>
   </div>
 </div>
-
+  </div>
+</div>

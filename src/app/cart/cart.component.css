@@ -8,9 +8,8 @@
   text-align: center;
 }
 
-.flex{
-  display: flex;
-
+button{
+  vertical-align: center;
 }
 
 .cartMessage{

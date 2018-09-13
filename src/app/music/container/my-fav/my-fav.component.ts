@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, DoCheck, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 
 import * as fromMusic from '../../store/reducer';
@@ -27,8 +27,10 @@ export class MyFavComponent implements OnInit, OnDestroy {
     ).subscribe(
       currentProduct => this.favorite = currentProduct
     );
-
+  console.log(this.favorite);
   }
+
+
 
   ngOnDestroy() {
     this.componentActive = false;

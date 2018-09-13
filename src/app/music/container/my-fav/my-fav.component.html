@@ -1,34 +1,32 @@
-<!--<p>-->
-  <!--my-fav works!{{favorite}}-->
-<!--</p>-->
-<!--<div *ngIf="favorite">-->
-  <!--<ul>-->
-    <!--<li *ngFor="let fav of favorite">{{fav.trackName}}</li>-->
-  <!--</ul>-->
-<!--</div>-->
-<div class="jumbotron">
-<table class="table">
-  <thead class="thead-dark">
-  <tr>
-    <th scope="col">Track id</th>
-    <th scope="col">Track Name</th>
-    <th scope="col">Artist</th>
-    <th scope="col">Collection</th>
-    <th scope="col">Preview</th>
-    <th scope="col"></th>
-  </tr>
-  </thead>
-<tbody *ngFor="let fav of favorite">
-<tr>
-  <td>{{fav.trackId }}</td>
-  <td>{{fav.trackName }}</td>
-  <td>{{fav.artistName }}</td>
-  <td>{{fav.collectionName }}</td>
-  <td><audio controls=""  name="media"><source src="{{fav.previewUrl}}" type="audio/x-m4a"></audio></td>
-  <td><button type="button" class="btn btn-danger" (click)="deleteFav(fav)">Delete</button>
-  </td>
-</tr>
 
-</tbody>
-</table>
-</div>
+
+
+  <div class="jumbotron">
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Track id</th>
+        <th scope="col">Track Name</th>
+        <th scope="col">Artist</th>
+        <th scope="col">Collection</th>
+        <th scope="col">Preview</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let fav of favorite">
+      <tr>
+        <td>{{fav.trackId }}</td>
+        <td>{{fav.trackName }}</td>
+        <td>{{fav.artistName }}</td>
+        <td>{{fav.collectionName }}</td>
+        <td><audio controls=""  name="media"><source src="{{fav.previewUrl}}" type="audio/x-m4a"></audio></td>
+        <td><button type="button" class="btn btn-danger" (click)="deleteFav(fav)">Delete</button>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+

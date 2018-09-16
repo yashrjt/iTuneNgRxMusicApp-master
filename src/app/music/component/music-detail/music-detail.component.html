@@ -7,30 +7,26 @@
       </div>
     <div class="card-body">
     <table class="table table-borderless">
-
     <tbody>
     <tr>
-      <th >Track Id:</th>
-      <td>{{selectedMusic.trackId }}</td>
+      <th >Track /Collection Id:</th>
+      <td>{{selectedMusic?.trackId  || selectedMusic?.collectionId}}</td>
     </tr>
-
     <tr>
-      <th >Track Name:</th>
-      <td>{{selectedMusic.trackName }}</td>
+      <th >Track /Collection Name:</th>
+      <td>{{selectedMusic?.trackName || selectedMusic?.collectionName }}</td>
     </tr>
     <tr>
       <th >Artist Name :</th>
       <td>{{selectedMusic.artistName}}</td>
     </tr>
     <tr>
-      <th >Collection Name :</th>
-      <td>{{selectedMusic.collectionName}}</td>
+      <th >Release Date</th>
+      <td>{{selectedMusic.releaseDate | date:'mediumDate'}}  </td>
     </tr>
-
-
     <tr>
-      <th >Release Date :</th>
-      <td>{{selectedMusic.releaseDate}}</td>
+      <th >Genre</th>
+      <td>{{selectedMusic.kind}}</td>
     </tr>
     <tr>
       <th >Preview :</th>
@@ -38,12 +34,10 @@
     </tr>
     </tbody>
   </table>
-
-      <div id="flex-container">
+  <div id="flex-container">
         <button type="button" class="btn btn-primary" (click)="addFav(selectedMusic)">Add to Favorite</button>
         <button type="button" class="btn btn-primary" (click)="detailRoute(selectedMusic.trackId)" style="margin-left: 10px;">More Detail</button>
-      </div>
-
-    </div>
-    </div>
+  </div>
+  </div>
+  </div>
 </div>

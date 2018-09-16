@@ -39,7 +39,8 @@ export function reducer(state = initialState, action: MusicActions): MusicState 
     case MusicActionTypes.CurrentMusic:
       return {
         ...state,
-        selectedMusicId: action.payload.trackId
+      /*  selectedMusicId: action.payload.trackId*/
+        selectedMusicId: action.payload
       };
     case MusicActionTypes.AddFavorite:
       return {

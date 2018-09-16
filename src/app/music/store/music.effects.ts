@@ -6,7 +6,7 @@ import {mergeMap, map, catchError, tap, switchMap} from 'rxjs/operators';
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import * as MusicActions from './actions/music.action';
-import {MusicService} from '../music.service';
+import {MusicService} from '../services/music.service';
 import {MusicActionTypes} from './actions/music.action';
 
 @Injectable()
@@ -20,8 +20,7 @@ export class MusicEffects {
   getMusic$: Observable<Action> = this.actions$.pipe(
     ofType(MusicActionTypes.GetMusic),
     map((action: MusicActions.GetMusic) => {
-      console.log('search val: ', action.payload);
-      return action.payload;}),
+       return action.payload;}),
     mergeMap((music: string) =>
       this.musicService.getMusic(music).pipe(
         map(data => (new MusicActions.GetSuccess(data))),

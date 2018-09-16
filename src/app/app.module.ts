@@ -8,16 +8,14 @@ import { MusicListComponent } from './music/component/music-list/music-list.comp
 import { SearchComponent } from './music/component/search/search.component';
 import { MusicShellComponent } from './music/container/music-shell/music-shell.component';
 import { MyFavComponent } from './music/container/my-fav/my-fav.component';
-import { MusicSearchComponent } from './music/services/music-search/music-search.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-import {StoreModule} from '@ngrx/store';
+import {ActionReducer, ActionReducerMap, MetaReducer, StoreModule} from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import {EffectsModule} from '@ngrx/effects';
 import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
-import {MusicService} from './music/music.service';
+import {MusicService} from './music/services/music.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthguardService} from './auth/auth/authguard.service';
 import {MusicModule} from './music/music.module';
@@ -25,6 +23,9 @@ import {MoreDetailComponent} from './music/component/more-detail/more-detail.com
 import { CartComponent } from './cart/cart.component';
 import {CartModule} from './cart/cart.module';
 import { CheckoutComponent } from './checkout/checkout.component';
+
+
+
 
 const routes = [
   {

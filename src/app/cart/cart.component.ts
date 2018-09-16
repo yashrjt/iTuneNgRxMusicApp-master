@@ -25,17 +25,7 @@ export class CartComponent implements OnInit, DoCheck, OnDestroy {
   constructor(private store: Store<fromRoot.State>, private route: Router) { }
 
   ngOnInit() {
-    /*this.store.pipe(
-      select(fromCart.getCartItems),
-      takeWhile(() => this.componentActive)
-    ).subscribe(
-      x => this.items = x
-    );
-    this.price = this.items.map(x => x.trackPrice).reduce((acc, currentValue) =>
-      acc + currentValue);
-    console.log('price:', this.price);*/
-    /*//Get totalCount items in cart*/
-    this.store.pipe(select(fromCart.getCount)).subscribe(count => this.totalCount = count);
+     this.store.pipe(select(fromCart.getCount)).subscribe(count => this.totalCount = count);
      this.store.pipe(select(fromCart.getCartItems),
        takeWhile(() => this.componentActive))
        .subscribe(x => this.items = x);

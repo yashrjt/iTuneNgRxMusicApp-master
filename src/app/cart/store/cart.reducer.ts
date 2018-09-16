@@ -61,30 +61,13 @@ export function cartReducer(state= initialState, action: CartActions): ShoppingC
 export function addToCart(state: ShoppingCart , payload: MusicItem){
   return{
     ...state,
-    totalCount: state.totalCount+1,
-    totalSum: state.totalSum + payload.trackPrice*1
+    totalCount: state.totalCount + 1,
+    totalSum: state.totalSum + payload.trackPrice * 1
      };
 }
 
 
 export function deleteFromCart(state: ShoppingCart, payload: MusicItem){
-
-  let targetItem = state['musicItem'].find(item => item.trackId === payload.trackId);
-
-  if (targetItem) {
-    targetItem.count--;
-    targetItem.sum -= payload.trackPrice;
-    if(targetItem.count === 0){
-      return{
-        ...state,
-        musicItem: state.musicItem.filter(music => music !== payload),
-        totalCount: state.totalCount - 1,
-        totalSum: state.totalSum - payload.trackPrice * 1
-      };
-    }
-
-    console.log( payload.sum);
-  }
   return{
     ...state,
     totalCount: state.totalCount - 1,

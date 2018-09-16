@@ -23,7 +23,7 @@ export const getSelectedMusic = createSelector(
   getMusicFeatureState,
   getMusicId,
   (state, selectedMusicId ) => {
-    return selectedMusicId ? state.Music.find(x => x.trackId === selectedMusicId) : null;
+    return selectedMusicId ? state.Music.find(x => (x.trackId || x.collectionId) === selectedMusicId) : null;
   }
 );
 

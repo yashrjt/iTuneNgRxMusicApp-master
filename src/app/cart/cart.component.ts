@@ -59,7 +59,7 @@ removeQty(item) {
   this.store.pipe(select(fromCart.getSum),
     takeWhile(() => this.componentActive))
     .subscribe(x => this.price = x);
-}
+  }
 
 
 

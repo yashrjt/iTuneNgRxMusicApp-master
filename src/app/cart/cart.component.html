@@ -1,5 +1,6 @@
-<div *ngIf="!!totalCount; else cartTrack">
-  <div class="jumbotron">
+
+<div *ngIf="!!totalCount; else cartTrack" id="container">
+  <div class="jumbotron" id="containerOne">
     <table class="table table-striped">
       <thead class="thead-dark">
       <tr>
@@ -29,16 +30,18 @@
       </tr>
       </tbody>
     </table>
-
-    <div class="flex">
-      <div class="">Total: ${{price}}</div>
-      <button type="button" class="btn btn-primary" [disabled]="items.length===0" routerLink="/checkout" >Checkout</button>
-    </div>
+    <p class="price">Total: ${{price}}</p>
   </div>
+  <div class="flex" id="containerTwo">
+    <button type="button" class="btn btn-primary" [disabled]="items.length===0" routerLink="/checkout" >Checkout</button>
+    <button type="button" class="btn btn-primary">Continue shopping</button>
+  </div>
+
+  <ng-template #cartTrack>
+    <div class="cartMessage">
+      Cart is Empty!!!
+    </div>
+  </ng-template>
 </div>
 
-<ng-template #cartTrack>
-  <div class="cartMessage">
-    Cart is Empty!!!
-  </div>
-</ng-template>
+

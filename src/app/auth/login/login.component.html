@@ -1,3 +1,21 @@
+<div>
+  <app-auth-form (submitted)="loginUser($event)">
+  <h3>Existing User</h3>
+  <button type="submit" class="btn btn-primary"  style="width:80px;margin-right:10px">Login</button>
+  </app-auth-form>
+
+
+  <app-auth-form (submitted)="createUser($event)">
+    <h3>New User</h3>
+    <button type="submit" class="btn btn-primary"  style="width:80px;margin-right:10px">Join us</button>
+  </app-auth-form>
+
+</div>
+
+
+
+
+<!--
 <div class="row justify-content-center" style="margin-top: 20px">
   <div class="col-md-6">
 <div class="card" style="margin-top: 20px">
@@ -10,7 +28,7 @@
     <div class="form-group" [ngClass]="{'has-error': (userNameVar.touched ||
                                                 userNameVar.dirty) &&
                                                 !userNameVar.valid }">
-      <label class=" control-label" for="userNameId"><strong>User Name</strong></label>
+      <label class=" control-label" for="userNameId"><strong>Email</strong></label>
       <div class="">
         <input class="form-control"
                id="userNameId"
@@ -71,3 +89,4 @@
 </div>
   </div>
 </div>
+-->

@@ -4,12 +4,7 @@
 }
 
 .itemCount{
-
   text-align: center;
-}
-
-button{
-  vertical-align: center;
 }
 
 .cartMessage{
@@ -18,4 +13,22 @@ button{
   color: aquamarine;
   font-family: "Rage Italic";
   font-size:xx-large;
+}
+
+#container{
+  display: flex;
+ }
+
+#container div{
+  border:solid 1px white;
+ padding:50px;
+}
+
+#containerOne{
+  flex-grow: 5;
+}
+
+#containerTwo{
+  flex-grow: 1;
+
 }

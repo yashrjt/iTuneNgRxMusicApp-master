@@ -1,11 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { MusicDetailComponent } from './music/component/music-detail/music-detail.component';
-import { MusicListComponent } from './music/component/music-list/music-list.component';
-import { SearchComponent } from './music/component/search/search.component';
 import { MusicShellComponent } from './music/container/music-shell/music-shell.component';
 import { MyFavComponent } from './music/container/my-fav/my-fav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -23,6 +19,10 @@ import {MoreDetailComponent} from './music/component/more-detail/more-detail.com
 import { CartComponent } from './cart/cart.component';
 import {CartModule} from './cart/cart.module';
 import { CheckoutComponent } from './checkout/checkout.component';
+import {AuthFormComponent} from './auth/auth-form/auth-form.component';
+import {AuthModule} from './auth/auth.module';
+import {LoginComponent} from './auth/login/login.component';
+
 
 
 
@@ -39,6 +39,7 @@ const routes = [
     canActivate: [AuthguardService ],
     component: MoreDetailComponent
   },
+ /* {path: 'auth', component: AuthFormComponent},*/
   {path: 'login', component: LoginComponent},
    {
      path: 'fav',
@@ -59,10 +60,8 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     CartComponent,
-    CheckoutComponent
-       /*MusicShellComponent*/
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +69,7 @@ const routes = [
     FormsModule,
     MusicModule,
     CartModule,
+    AuthModule,
     NgbModule.forRoot(),
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
@@ -81,7 +81,7 @@ const routes = [
     }),
     EffectsModule.forRoot([])
   ],
-  providers: [MusicService, Location],
+   providers: [MusicService, Location],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

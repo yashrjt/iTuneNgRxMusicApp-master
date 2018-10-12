@@ -15,9 +15,12 @@ export class LoginComponent implements OnInit {
               private router: Router
   ) { }
 
-  login(loginForm: NgForm ){
+   ngOnInit() {
+  }
 
-    if(loginForm && loginForm.valid){
+  login(loginForm: NgForm ) {
+  console.log('login called');
+    if(loginForm && loginForm.valid) {
       const username: string = loginForm.form.value.username;
       const pwd: string = loginForm.form.value.password;
       this.authService.logIn(username, pwd );
@@ -32,11 +35,12 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
-  ngOnInit() {
+  loginUser(event) {
+    console.log(event);
   }
-
-
+  createUser($event) {
+    console.log(event);
+  }
 }
 
 

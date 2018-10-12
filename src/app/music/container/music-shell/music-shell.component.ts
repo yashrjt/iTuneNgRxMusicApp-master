@@ -45,7 +45,4 @@ export class MusicShellComponent implements OnInit {
   setPNo(no: number){
     this.store.dispatch(new MusicActions.SetPageNo(no));
   }
-
-
-
 }

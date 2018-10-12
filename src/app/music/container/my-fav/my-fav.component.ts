@@ -39,7 +39,8 @@ export class MyFavComponent implements OnInit, OnDestroy {
     if ( confirm('Remove ' + music.trackName + ' from favorite?')) {
   this.store.dispatch(new MusicActions.DeleteFavorite(music) );
     }
- // alert(music.trackName + 'deleted');
+
+   // alert(music.trackName + 'deleted');
   }
 
 }

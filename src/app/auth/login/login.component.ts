@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../auth/auth.service';
+import {User} from '../user';
 
 @Component({
   selector: 'app-login',
@@ -16,31 +17,27 @@ export class LoginComponent implements OnInit {
   ) { }
 
    ngOnInit() {
-  }
-
-  login(loginForm: NgForm ) {
-  console.log('login called');
-    if(loginForm && loginForm.valid) {
-      const username: string = loginForm.form.value.username;
-      const pwd: string = loginForm.form.value.password;
-      this.authService.logIn(username, pwd );
-
-      if (this.authService.redirectUrl) {
-        this.router.navigateByUrl(this.authService.redirectUrl);
-      } else {
-        this.router.navigate(['/music']);
       }
+
+ redirectUser(user: User ) {
+    const username: string = user.email;
+    const pwd: string = user.password;
+    this.authService.logIn(username, pwd );
+    if (this.authService.redirectUrl) {
+      this.router.navigateByUrl(this.authService.redirectUrl);
     } else {
-      this.errorMessage = 'Please enter a user name and password.';
+      this.router.navigate(['/music']);
     }
   }
 
-  loginUser(event) {
-    console.log(event);
-  }
-  createUser($event) {
-    console.log(event);
-  }
+  loginUser(user: User) {
+    console.log(user);
+    this.redirectUser(user);
+     }
+  createUser(user: User) {
+    alert('Account created successfully created');
+    this.redirectUser(user);
+    }
 }
 
 

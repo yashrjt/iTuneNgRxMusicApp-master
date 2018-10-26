@@ -7,7 +7,7 @@ import { MusicListComponent } from './component/music-list/music-list.component'
 import { MusicDetailComponent } from './component/music-detail/music-detail.component';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
-import {MusicEffects} from './store/music.effects';
+import {MusicEffects} from './store/effect/music.effects';
 import { reducer } from './store/reducer/music.reducer';
 import { JwPaginationComponent } from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';

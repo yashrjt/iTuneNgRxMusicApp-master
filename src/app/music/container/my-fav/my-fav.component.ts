@@ -1,4 +1,15 @@
-import {Component, DoCheck, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  DoCheck,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  OnDestroy,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 
 import * as fromMusic from '../../store/reducer';
@@ -11,7 +22,8 @@ import * as fromRoot from '../../../state/app.state';
   templateUrl: './my-fav.component.html',
   styleUrls: ['./my-fav.component.css']
 })
-export class MyFavComponent implements OnInit, OnDestroy {
+export class MyFavComponent implements OnInit, OnDestroy , AfterViewInit {
+  @ViewChild('favItem') favItem: ElementRef;
   fav$: Observable<any[]>;
   favorite: any[] ;
   componentActive = true;
@@ -20,7 +32,7 @@ export class MyFavComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
    // this.fav$ = this.store.pipe.subscribe(select(fromMusic.getFavorite));
-
+    console.log(this.favItem);
     this.store.pipe(
       select(fromMusic.getFavorite),
       takeWhile(() => this.componentActive)
@@ -30,6 +42,9 @@ export class MyFavComponent implements OnInit, OnDestroy {
   console.log(this.favorite);
   }
 
+  ngAfterViewInit(): void {
+    console.log(this.favItem);
+  }
 
 
   ngOnDestroy() {
@@ -42,5 +57,6 @@ export class MyFavComponent implements OnInit, OnDestroy {
 
    // alert(music.trackName + 'deleted');
   }
+
 
 }

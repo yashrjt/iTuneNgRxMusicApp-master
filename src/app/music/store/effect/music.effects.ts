@@ -5,9 +5,9 @@ import {mergeMap, map, catchError, tap, switchMap} from 'rxjs/operators';
 
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import * as MusicActions from './actions/music.action';
-import {MusicService} from '../services/music.service';
-import {MusicActionTypes} from './actions/music.action';
+import * as MusicActions from '../actions/music.action';
+import {MusicActionTypes} from '../actions/music.action';
+import {MusicService} from '../../services/music.service';
 
 @Injectable()
 export class MusicEffects {

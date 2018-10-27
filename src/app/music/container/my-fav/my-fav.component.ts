@@ -16,7 +16,7 @@ import * as fromMusic from '../../store/reducer';
 import {Observable} from 'rxjs';
 import {takeWhile} from 'rxjs/operators';
 import * as MusicActions from '../../store/actions/music.action';
-import * as fromRoot from '../../../state/app.state';
+import * as fromRoot from '../../../store/reducer/index';
 @Component({
   selector: 'app-my-fav',
   templateUrl: './my-fav.component.html',

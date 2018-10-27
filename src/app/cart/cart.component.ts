@@ -1,6 +1,6 @@
 import {Component, DoCheck, OnChanges, OnDestroy, OnInit} from '@angular/core';
 import {from, Observable} from 'rxjs';
-import * as fromRoot from '../state/app.state';
+import * as fromRoot from '../store/reducer/index';
 import {select, Store} from '@ngrx/store';
 import {takeWhile} from 'rxjs/operators';
 import * as fromCart from './store/';

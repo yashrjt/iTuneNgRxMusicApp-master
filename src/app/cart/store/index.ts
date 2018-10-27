@@ -1,6 +1,6 @@
 import * as fromCart from './cart.reducer';
 import {ActionReducerMap, createFeatureSelector, createSelector} from '@ngrx/store';
-import {State} from '../../state/app.state';
+import {State} from '../../store/reducer/index';
 import * as fromCartReducer from './cart.reducer';
 
 

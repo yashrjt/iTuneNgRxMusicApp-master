@@ -1,4 +1,4 @@
-// import * as fromRoot from '../../../state/app.state';
+// import * as fromRoot from '../../../store/app.store';
 import * as fromMusic from './music.reducer';
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 

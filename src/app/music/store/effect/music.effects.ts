@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-
 import { Observable, of } from 'rxjs';
 import {mergeMap, map, catchError, tap, switchMap} from 'rxjs/operators';
-
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import * as MusicActions from '../actions/music.action';

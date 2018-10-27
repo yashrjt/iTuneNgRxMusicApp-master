@@ -1,6 +1,6 @@
 import {Component, DoCheck, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {select, Store} from '@ngrx/store';
-import * as fromRoot from '../../../state/app.state';
+import * as fromRoot from '../../../store/reducer/index';
 import * as MusicActions from '../../store/actions/music.action';
 import {Observable} from 'rxjs';
 import * as fromMusic from '../../store/reducer';

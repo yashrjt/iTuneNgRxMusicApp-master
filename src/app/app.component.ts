@@ -5,7 +5,7 @@ import {select, Store} from '@ngrx/store';
 import * as fromMusic from './music/store/reducer';
 import * as fromCart from './cart/store/';
 import {takeWhile} from 'rxjs/operators';
-import * as fromRoot from './state/app.state';
+import * as fromRoot from './store/reducer/index';
 import {Observable} from 'rxjs';
 
 @Component({

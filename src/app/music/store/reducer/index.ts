@@ -2,8 +2,6 @@
 import * as fromMusic from './music.reducer';
 import {createFeatureSelector, createSelector} from '@ngrx/store';
 
-
-
 const getMusicFeatureState = createFeatureSelector<fromMusic.MusicState>('music');
 
 export const getMusic = createSelector(

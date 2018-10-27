@@ -1,12 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { MusicShellComponent } from './music/container/music-shell/music-shell.component';
 import { MyFavComponent } from './music/container/my-fav/my-fav.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {ActionReducer, ActionReducerMap, MetaReducer, StoreModule} from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 import { environment } from '../environments/environment';
 import {EffectsModule} from '@ngrx/effects';
 import {RouterModule} from '@angular/router';
@@ -19,12 +16,13 @@ import {MoreDetailComponent} from './music/component/more-detail/more-detail.com
 import { CartComponent } from './cart/cart.component';
 import {CartModule} from './cart/cart.module';
 import { CheckoutComponent } from './checkout/checkout.component';
-import {AuthFormComponent} from './auth/auth-form/auth-form.component';
 import {AuthModule} from './auth/auth.module';
 import {LoginComponent} from './auth/login/login.component';
-
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StoreModule} from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {StoreRouterConnectingModule , RouterStateSerializer} from '@ngrx/router-store';
+import {metaReducers, reducers, CustomSerializer} from './store/reducer';
 
 
 const routes = [
@@ -73,15 +71,17 @@ const routes = [
     NgbModule.forRoot(),
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(reducers, { metaReducers }),
     StoreDevtoolsModule.instrument({
       name: 'APM Demo App DevTools',
       maxAge: 25,
       logOnly: environment.production,
     }),
+    StoreRouterConnectingModule,
     EffectsModule.forRoot([])
   ],
-   providers: [MusicService, Location],
+   providers: [MusicService, Location , {provide: RouterStateSerializer , useClass: CustomSerializer}],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

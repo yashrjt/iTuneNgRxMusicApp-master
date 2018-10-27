@@ -16,6 +16,34 @@ export class MusicDetailComponent implements OnInit {
   ngOnInit() {
 
   }
+  get artistName() {
+    return this.selectedMusic.artistName;
+  }
+  get artworkUrl100() {
+    return this.selectedMusic.artworkUrl100;
+  }
+/*  get trackId() {
+    return this.selectedMusic.trackId;
+  }
+  get collectionId() {
+    return this.selectedMusic.collectionId;
+  }*/
+  get trackName() {
+    return this.selectedMusic.trackName;
+  }
+  get collectionName() {
+    return this.selectedMusic.collectionName;
+  }
+  get releaseDate() {
+    return this.selectedMusic.releaseDate;
+  }
+  get kind() {
+    return this.selectedMusic.kind;
+  }
+  get previewUrl() {
+    return this.selectedMusic.previewUrl;
+  }
+
   moreDetail(trackId: number) {
        this.router.navigate(['/more-detail', trackId]);
   }

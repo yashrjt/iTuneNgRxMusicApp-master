@@ -3,7 +3,7 @@
   <div class="card ">
     <div class="card-header">
   <!--<video controls=""  name="media"><source src="{{selectedMusic.previewUrl}}" type="audio/x-m4a"></video>-->
-  <img src="{{selectedMusic.artworkUrl100 }}" class="rounded mx-auto d-block" alt="" width="200px" height="200px" style="margin-bottom: 10px;">
+  <img src="{{artworkUrl100 }}" class="rounded mx-auto d-block" alt="" width="200px" height="200px" style="margin-bottom: 10px;">
       </div>
     <div class="card-body">
     <table class="table table-borderless">
@@ -14,23 +14,23 @@
     </tr>
     <tr>
       <th >Track /Collection Name:</th>
-      <td>{{selectedMusic?.trackName || selectedMusic?.collectionName }}</td>
+      <td>{{trackName || collectionName }}</td>
     </tr>
     <tr>
       <th >Artist Name :</th>
-      <td>{{selectedMusic.artistName}}</td>
+      <td>{{artistName}}</td>
     </tr>
     <tr>
       <th >Release Date</th>
-      <td>{{selectedMusic.releaseDate | date:'mediumDate'}}  </td>
+      <td>{{releaseDate | date:'mediumDate'}}  </td>
     </tr>
     <tr>
       <th >Genre</th>
-      <td>{{selectedMusic.kind}}</td>
+      <td>{{kind}}</td>
     </tr>
     <tr>
       <th >Preview :</th>
-      <td><audio controls=""  name="media" src="{{selectedMusic.previewUrl}}" type="audio/x-m4a"></audio></td>
+      <td><audio controls=""  name="media" src="{{previewUrl}}" type="audio/x-m4a"></audio></td>
     </tr>
     </tbody>
   </table>

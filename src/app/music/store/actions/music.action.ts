@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 
+
 export enum MusicActionTypes {
   GetMusic = 'GetMusic',
   GetSuccess = 'GetSuccess',
@@ -14,7 +15,7 @@ export enum MusicActionTypes {
 
 export class GetMusic implements Action {
   readonly type = MusicActionTypes.GetMusic;
-  constructor(public payload: string) { }
+  constructor(public payload: any) { }
 }
 export class CurrentMusic implements Action {
   readonly type = MusicActionTypes.CurrentMusic;

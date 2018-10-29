@@ -3,7 +3,6 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { AppComponent } from './app.component';
 import { MusicShellComponent } from './music/container/music-shell/music-shell.component';
 import { MyFavComponent } from './music/container/my-fav/my-fav.component';
-
 import { environment } from '../environments/environment';
 import {EffectsModule} from '@ngrx/effects';
 import {RouterModule} from '@angular/router';

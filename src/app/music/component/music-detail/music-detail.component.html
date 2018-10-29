@@ -1,9 +1,7 @@
 <div *ngIf="selectedMusic" style="margin-top: 20px;">
-
   <div class="card ">
     <div class="card-header">
-  <!--<video controls=""  name="media"><source src="{{selectedMusic.previewUrl}}" type="audio/x-m4a"></video>-->
-  <img src="{{artworkUrl100 }}" class="rounded mx-auto d-block" alt="" width="200px" height="200px" style="margin-bottom: 10px;">
+ <img src="{{artworkUrl100 }}" class="rounded mx-auto d-block" alt="" width="200px" height="200px" style="margin-bottom: 10px;">
       </div>
     <div class="card-body">
     <table class="table table-borderless">
@@ -25,11 +23,11 @@
       <td>{{releaseDate | date:'mediumDate'}}  </td>
     </tr>
     <tr>
-      <th >Genre</th>
+      <th>Genre</th>
       <td>{{kind}}</td>
     </tr>
     <tr>
-      <th >Preview :</th>
+      <th>Preview :</th>
       <td><audio controls=""  name="media" src="{{previewUrl}}" type="audio/x-m4a"></audio></td>
     </tr>
     </tbody>

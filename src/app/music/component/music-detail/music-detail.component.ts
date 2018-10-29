@@ -12,22 +12,13 @@ export class MusicDetailComponent implements OnInit {
   @Output() fav = new EventEmitter<any>();
 
   constructor(private router: Router) { }
-
-  ngOnInit() {
-
-  }
+  ngOnInit() {  }
   get artistName() {
     return this.selectedMusic.artistName;
   }
   get artworkUrl100() {
     return this.selectedMusic.artworkUrl100;
   }
-/*  get trackId() {
-    return this.selectedMusic.trackId;
-  }
-  get collectionId() {
-    return this.selectedMusic.collectionId;
-  }*/
   get trackName() {
     return this.selectedMusic.trackName;
   }
@@ -47,12 +38,12 @@ export class MusicDetailComponent implements OnInit {
   moreDetail(trackId: number) {
        this.router.navigate(['/more-detail', trackId]);
   }
+
   addFav(data) {
     this.fav.emit(data);
-
   }
-  detailRoute(id: number){
 
+  detailRoute(id: number) {
      this.router.navigate(['/detail'], { queryParams: { trackId: id } });
   }
 

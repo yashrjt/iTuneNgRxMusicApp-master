@@ -16,8 +16,7 @@ export class LoginComponent implements OnInit {
               private router: Router
   ) { }
 
-   ngOnInit() {
-      }
+   ngOnInit() { }
 
  redirectUser(user: User ) {
     const username: string = user.email;
@@ -29,7 +28,6 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/music']);
     }
   }
-
   loginUser(user: User) {
     console.log(user);
     this.redirectUser(user);

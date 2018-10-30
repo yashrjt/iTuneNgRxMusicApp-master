@@ -6,7 +6,6 @@ import {
   createSelector,
   MetaReducer
 } from '@ngrx/store';
-import { environment } from '../../../environments/environment';
 import {ActivatedRouteSnapshot, Params, RouterStateSnapshot} from '@angular/router';
 import {Injectable} from '@angular/core';
 import {RouterStateSerializer} from '@ngrx/router-store';
@@ -56,6 +55,7 @@ export const reducers: ActionReducerMap<State> = {
 export const getRouterState = createFeatureSelector<fromRouter.RouterReducerState<RouterStateUrl>>('routerReducer');
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
-  return localStorageSync({keys: ['music', 'cart'], rehydrate: true})(reducer);
+  return localStorageSync({keys: ['music', 'cart'], rehydrate: true ,  removeOnUndefined: false})(reducer);
 }
+
 export const metaReducers: MetaReducer<State>[] =  [localStorageSyncReducer];

@@ -34,11 +34,11 @@ export class LoginComponent implements OnInit {
   }
   loginUser(user: User) {
   this.redirectUser(user);
-       }
+  }
   createUser(user: User) {
     alert('Account created successfully created');
     this.redirectUser(user);
-    }
+  }
 }
 
 

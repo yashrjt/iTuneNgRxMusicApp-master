@@ -15,7 +15,6 @@ import * as fromCart from '../../cart/store/cart.reducer';
 import * as fromAuth from '../../auth/store/reducers/auth.reducer';
 
 
-
 export interface State {
   router: fromRouter.RouterReducerState<RouterStateUrl>;
   music: fromMusic.MusicState;
@@ -30,12 +29,12 @@ export const reducers: ActionReducerMap<State> = {
   auth: fromAuth.authReducer
 };
 
-
 export interface RouterStateUrl {
   url: string;
   params: Params;
   queryParams: Params;
 }
+
 @Injectable()
 export class CustomSerializer implements RouterStateSerializer<RouterStateUrl> {
   serialize(routerState: RouterStateSnapshot): RouterStateUrl {

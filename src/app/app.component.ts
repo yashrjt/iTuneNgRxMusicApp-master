@@ -14,26 +14,7 @@ import {Observable} from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit  {
-  title = 'iTunesNgRx';
-  navbarCollapsed = true;
- val$: Observable<number> ;
- cartCount$:  Observable<number> ;
-  get isLoggedIn(): boolean {
-    return this.authService.isLoggedIn();
-  }
+  constructor() { }
 
-
-
-  constructor(private router: Router,
-              private authService: AuthService, private store: Store<fromRoot.State>) { }
-
- ngOnInit() {
-   this.val$ = this.store.pipe(select(fromMusic.getCount));
-   this.cartCount$ = this.store.pipe(select(fromCart.getCount));
- }
-  logOut(): void {
-    this.authService.logOut();
-    this.router.navigate(['/login']);
-  }
-
+  ngOnInit() {}
 }

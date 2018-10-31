@@ -5,8 +5,7 @@ import {EffectsModule} from '@ngrx/effects';
 import {AuthComponent} from './auth/auth.component';
 import {AuthFormComponent} from './auth-form/auth-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-
+import {AuthService} from './services/auth.service';
 
 @NgModule({
   imports: [
@@ -23,6 +22,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AuthFormComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  providers: [AuthService]
 })
 export class AuthModule { }
+
 

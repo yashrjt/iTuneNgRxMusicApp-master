@@ -3,7 +3,7 @@ import {createFeatureSelector, createSelector} from '@ngrx/store';
 
 const getAuthState = createFeatureSelector<fromAuth.AuthState>('auth');
 
-/*export const login = createSelector(
+/*export const auth = createSelector(
   getAuthState
   state => state
 );

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {AuthService} from './auth/auth/auth.service';
+import {AuthService} from './auth/services/auth.service';
 import {select, Store} from '@ngrx/store';
 import * as fromMusic from './music/store/reducer';
 import * as fromCart from './cart/store/';

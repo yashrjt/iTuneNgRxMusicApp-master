@@ -1,4 +1,4 @@
-import {MusicItem} from '../musicItem';
+import {MusicItem} from '../models/musicItem';
 import {CartActions, CartActionTypes} from './cart.actions';
 
 export interface CartState {

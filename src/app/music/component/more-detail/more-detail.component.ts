@@ -7,7 +7,7 @@ import * as fromRoot from '../../../store/reducer/index';
 
 import {takeWhile} from 'rxjs/operators';
 import * as CartActions from '../../../cart/store/cart.actions';
-import {MusicItem} from '../../../cart/musicItem';
+import {MusicItem} from '../../../cart/models/musicItem';
 
 @Component({
   selector: 'app-more-detail',

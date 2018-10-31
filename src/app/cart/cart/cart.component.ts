@@ -6,7 +6,7 @@ import {takeWhile} from 'rxjs/operators';
 import * as fromCart from '../store/index';
 import * as CartActions from '../store/cart.actions';
 import {Router} from '@angular/router';
-import {MusicItem} from '../musicItem';
+import {MusicItem} from '../models/musicItem';
 
 @Component({
   selector: 'app-cart',

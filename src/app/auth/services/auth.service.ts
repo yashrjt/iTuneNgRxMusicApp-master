@@ -3,7 +3,7 @@ import * as MusicActions from '../../music/store/actions/music.action';
 import * as fromMusic from '../../music/store/reducer';
 import {Store} from '@ngrx/store';
 import * as fromRoot from '../../store/reducer/index';
-import {User} from '../user';
+import {User} from '../models/user';
 
 @Injectable({
   providedIn: 'root'

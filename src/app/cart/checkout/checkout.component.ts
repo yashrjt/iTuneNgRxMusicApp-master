@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import * as fromRoot from '../store/reducer/index';
+import * as fromRoot from '../../store/reducer/index';
 import {Store} from '@ngrx/store';
-import * as CartActions from '../cart/store/cart.actions';
+import * as CartActions from '../store/cart.actions';
 import {Route, Router} from '@angular/router';
 
 @Component({

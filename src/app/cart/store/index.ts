@@ -5,7 +5,7 @@ import * as fromCartReducer from './cart.reducer';
 
 
 /*const getMusicFeatureState = createFeatureSelector<fromCart.CartState>('cart');*/
-const getMusicFeatureState = createFeatureSelector<fromCart.ShoppingCart>('cart');
+const getMusicFeatureState = createFeatureSelector<fromCart.CartState>('cart');
 
 export const getCartItems = createSelector(
   getMusicFeatureState,

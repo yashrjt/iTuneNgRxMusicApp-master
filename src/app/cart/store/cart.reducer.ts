@@ -1,21 +1,19 @@
 import {MusicItem} from '../musicItem';
 import {CartActions, CartActionTypes} from './cart.actions';
-import {ShoppingCart} from '../cart';
 
-
-export interface ShoppingCart{
+export interface CartState {
   musicItem: MusicItem[];
   totalCount: number;
   totalSum: number;
 }
 
-const initialState: ShoppingCart = {
+const initialState: CartState = {
   musicItem: [],
   totalCount: 0,
   totalSum: 0
 }
 
-function updateMusicItem(state: ShoppingCart, payload: MusicItem) {
+function updateMusicItem(state: CartState, payload: MusicItem) {
 
   // @ts-ignore
   const targetItem = state['musicItem'].find(item => item.trackId === payload.trackId);
@@ -33,7 +31,7 @@ function updateMusicItem(state: ShoppingCart, payload: MusicItem) {
     }
 }
 
-function deleteMusicItem(state: ShoppingCart, payload: MusicItem) {
+function deleteMusicItem(state: CartState, payload: MusicItem) {
   const targetItem = state['musicItem'].find(item => item.trackId === payload.trackId);
 
   if (targetItem) {
@@ -51,7 +49,7 @@ function deleteMusicItem(state: ShoppingCart, payload: MusicItem) {
     console.log( payload.sum);
   }
 }
-export function cartReducer(state= initialState, action: CartActions): ShoppingCart {
+export function cartReducer(state= initialState, action: CartActions): CartState {
   switch (action.type) {
     case CartActionTypes.AddToCart:
         updateMusicItem(state, action.payload);
@@ -73,7 +71,7 @@ export function cartReducer(state= initialState, action: CartActions): ShoppingC
 }
 
 
-export function addToCart(state: ShoppingCart , payload: MusicItem){
+export function addToCart(state: CartState , payload: MusicItem){
   return{
     ...state,
     totalCount: state.totalCount + 1,
@@ -82,7 +80,7 @@ export function addToCart(state: ShoppingCart , payload: MusicItem){
 }
 
 
-export function deleteFromCart(state: ShoppingCart, payload: MusicItem){
+export function deleteFromCart(state: CartState, payload: MusicItem){
   return{
     ...state,
     totalCount: state.totalCount - 1,

@@ -8,7 +8,7 @@ import { MusicDetailComponent } from './component/music-detail/music-detail.comp
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {MusicEffects} from './store/effect/music.effects';
-import { reducer } from './store/reducer/music.reducer';
+import {musicReducer} from './store/reducer/music.reducer';
 import { JwPaginationComponent } from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { MoreDetailComponent } from './component/more-detail/more-detail.component';
@@ -17,7 +17,7 @@ import { MoreDetailComponent } from './component/more-detail/more-detail.compone
 @NgModule({
   imports: [
     CommonModule,
-    StoreModule.forFeature('music', reducer),
+    StoreModule.forFeature('music', musicReducer),
     EffectsModule.forFeature(
       [MusicEffects]
     ),

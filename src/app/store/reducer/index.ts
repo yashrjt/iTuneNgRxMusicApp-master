@@ -12,7 +12,23 @@ import {RouterStateSerializer} from '@ngrx/router-store';
 import {localStorageSync} from 'ngrx-store-localstorage';
 import * as fromMusic from '../../music/store/reducer/music.reducer';
 import * as fromCart from '../../cart/store/cart.reducer';
+import * as fromAuth from '../../auth/store/reducers/auth.reducer';
 
+
+
+export interface State {
+  router: fromRouter.RouterReducerState<RouterStateUrl>;
+  music: fromMusic.MusicState;
+  cart: fromCart.CartState;
+  auth: fromAuth.AuthState;
+}
+
+export const reducers: ActionReducerMap<State> = {
+  router: fromRouter.routerReducer,
+  music: fromMusic.musicReducer,
+  cart: fromCart.cartReducer,
+  auth: fromAuth.authReducer
+};
 
 
 export interface RouterStateUrl {
@@ -20,13 +36,6 @@ export interface RouterStateUrl {
   params: Params;
   queryParams: Params;
 }
-
-export interface State {
-  router: fromRouter.RouterReducerState<RouterStateUrl>;
-  music: fromMusic.MusicState;
-  cart: fromCart.ShoppingCart;
-}
-
 @Injectable()
 export class CustomSerializer implements RouterStateSerializer<RouterStateUrl> {
   serialize(routerState: RouterStateSnapshot): RouterStateUrl {
@@ -46,11 +55,7 @@ export class CustomSerializer implements RouterStateSerializer<RouterStateUrl> {
     return { url, params, queryParams };
   }
 }
-export const reducers: ActionReducerMap<State> = {
-  router: fromRouter.routerReducer,
-  music: fromMusic.reducer,
-  cart: fromCart.cartReducer
-};
+
 
 export const getRouterState = createFeatureSelector<fromRouter.RouterReducerState<RouterStateUrl>>('routerReducer');
 

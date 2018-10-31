@@ -3,6 +3,9 @@ import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../auth/auth.service';
 import {User} from '../user';
+import {Store} from '@ngrx/store';
+import * as fromRoot from '../../store/reducer';
+import {AuthActions} from '../store/actions/auth.actions';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   errorMessage: string;
   constructor(private authService: AuthService ,
-              private router: Router
+              private router: Router,
+              private store: Store<fromRoot.State>
   ) { }
 
    ngOnInit() { }
@@ -29,9 +33,8 @@ export class LoginComponent implements OnInit {
     }
   }
   loginUser(user: User) {
-    console.log(user);
-    this.redirectUser(user);
-     }
+  this.redirectUser(user);
+       }
   createUser(user: User) {
     alert('Account created successfully created');
     this.redirectUser(user);

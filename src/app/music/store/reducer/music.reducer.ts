@@ -19,7 +19,7 @@ const initialState: MusicState = {
   pageNum: 1
 };
 
-export function reducer(state = initialState, action: MusicActions): MusicState {
+export function musicReducer(state = initialState, action: MusicActions): MusicState {
 
   switch (action.type) {
     case MusicActionTypes.GetSuccess:

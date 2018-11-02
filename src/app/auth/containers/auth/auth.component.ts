@@ -5,7 +5,9 @@ import {AuthService} from '../../services/auth.service';
 import {User} from '../../models/user';
 import {Store} from '@ngrx/store';
 import * as fromRoot from '../../../store/reducer/index';
-import {AuthActions} from '../../store/actions/auth.actions';
+import {AuthActions, Login, SignUp} from '../../store/actions/auth.actions';
+import * as fromAuth from '../../store/reducers/auth.reducer';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -17,10 +19,10 @@ export class AuthComponent implements OnInit {
   errorMessage: string;
   constructor(private authService: AuthService ,
               private router: Router,
-              private store: Store<fromRoot.State>
+              private store: Store<fromAuth.AuthState>
   ) { }
 
-   ngOnInit() { }
+   ngOnInit() {}
 
  redirectUser(user: User ) {
     const username: string = user.email;
@@ -33,11 +35,13 @@ export class AuthComponent implements OnInit {
     }
   }
   loginUser(user: User) {
-  this.redirectUser(user);
+  /*this.redirectUser(user);*/
+    this.store.dispatch(new Login(user));
   }
   createUser(user: User) {
-    alert('Account created successfully created');
-    this.redirectUser(user);
+   /* alert('Account created successfully created');
+    this.redirectUser(user);*/
+   this.store.dispatch(new SignUp(user));
   }
 }
 

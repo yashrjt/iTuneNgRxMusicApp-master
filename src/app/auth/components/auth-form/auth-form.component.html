@@ -1,0 +1,46 @@
+<!--basic content projection-->
+<div class="row justify-content-center" style="margin-top: 20px">
+  <div class="col-md-6">
+    <div class="card" style="margin-top: 20px">
+      <div class="card-header">
+        <ng-content select="h3"></ng-content>
+      </div>
+      <div class="card-body">
+        <form class="form-signin" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+          <fieldset>
+            <div class="form-group">
+              <label class=" control-label"><strong>Email</strong></label>
+              <div class="">
+                <input class="form-control"
+                       type="text"
+                       placeholder="Email (required)"
+                       required
+                       name="username" ngModel autocomplete="" />
+             </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label"><strong>Password</strong></label>
+              <div class="">
+                <input class="form-control"
+                       type="password"
+                       placeholder="Password (required)"
+                       required
+                       name="password" ngModel  autocomplete="" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class=" col-md-offset-2">
+                                <span>
+                                   <ng-content select="button"></ng-content>
+                                </span>
+
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
